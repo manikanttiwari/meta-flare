@@ -1,0 +1,29 @@
+# cmake_minimum_required(VERSION 3.25)
+# project(meta-flare)
+
+# set(CMAKE_CXX_STANDARD 20)
+# set(CMAKE_CXX_STANDARD_REQUIRED On)
+# set(CMAKE_CXX_EXTENSIONS Off)
+
+# find_package(zookeeper-client-c REQUIRED)
+
+
+# Create an executable and link it with the "zookeeper-client-c" library
+# add_executable(meta-flare src/main.cpp)
+
+# Add the include directories here
+# target_include_directories(meta-flare PRIVATE ${ZooKeeper_INCLUDE_DIRS})
+
+# target_link_libraries(meta-flare zookeeper-client-c::zookeeper-client-c)
+
+# Include the source code from the "src" directory
+# add_subdirectory(src)
+
+cmake_minimum_required(VERSION 3.25)
+project(meta-flare)
+include_directories(${CONAN_INCLUDE_DIRS}/libxml2)
+find_package(zookeeper-client-c REQUIRED)
+
+add_executable(${PROJECT_NAME} src/main.cpp src/zookeeper/connector.cpp)
+target_link_libraries(meta-flare zookeeper-client-c::zookeeper-client-c)
+target_include_directories(meta-flare PRIVATE ${CONAN_INCLUDE_DIRS})

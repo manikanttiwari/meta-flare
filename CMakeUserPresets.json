@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/Users/manikanttiwari/Desktop/Personal/meta-flare/meta-flare/build/CMakePresets.json"
+    ]
+}

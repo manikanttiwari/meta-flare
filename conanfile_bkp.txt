@@ -1,0 +1,9 @@
+[requires]
+zookeeper-client-c/3.9.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
