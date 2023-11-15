@@ -4,8 +4,14 @@
 using namespace std;
 
 int main() {
-    ZooKeeperConnector zkConnector("localhost:2181", 5000);
-    zkConnector.connect();
-    zkConnector.createZNode("/testing", "manikant");
+    cout << "\nprogram started \n";
+    ZooKeeperConnector zkConnector("localhost:2181", 10000);
+    bool isConnected = zkConnector.connect();
+    if(isConnected){
+        cout << "\nreating node\n";
+        zkConnector.createZNode("/testing", "manikant");
+    }else{
+        cout << "\nzookeeper not connected\n";
+    }
     return EXIT_SUCCESS;
 }
